@@ -4,7 +4,7 @@ import { Typewriter } from 'react-simple-typewriter';
 
 const Funding = () => {
     return (
-        <div className="relative bg-[#D9F7D0] text-white mx-3 md:mx-5 my-14 flex flex-col-reverse md:flex-row items-center justify-between shadow-xl">
+        <div className="relative bg-[#D9F7D0] text-white mx-3 max-w-screen-xl md:mx-auto my-14 flex flex-col-reverse md:flex-row items-center justify-between shadow-xl">
 
             {/* text section */}
             <div className="relative max-w-7xl mx-auto py-5 md:py-16 px-6 text-left">
