@@ -16,7 +16,7 @@ const ErrorPage = () => {
                 </iframe>
                 
                 <Link to='/'>
-                    <button className='btn mt-5 px-8 py-2 bg-[#1B3D2F] border-none text-white text-sm md:text-lg'>Back To Home Page
+                    <button className='btn mt-5 px-8 py-2 bg-[#1B3D2F] border-none text-white text-sm md:text-lg hover:bg-[#429271] '>Back To Home Page
                     </button>
                 </Link>
             </div>
