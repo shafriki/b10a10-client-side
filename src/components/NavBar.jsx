@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import logo from '../assets/crowd.png';
 
 const NavBar = () => {
@@ -21,7 +21,7 @@ const NavBar = () => {
 
     return (
         <div className='bg-[#1B3D2F] text-[#ECF0F1] py-1 sticky top-0 z-50 backdrop-blur opacity-90'>
-            
+
             <div className="navbar max-w-screen-xl mx-auto">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -54,8 +54,8 @@ const NavBar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end gap-3">
-                    <a className="btn text-xs md:text-base" id='login'>Login</a>
-                    <a className="btn text-xs md:text-base" id='register'>Register</a>
+                    <Link to='/login' className="btn text-xs md:text-base" id='login'>Login</Link>
+                    <Link to='/register' className="btn text-xs md:text-base" id='register'>Register</Link>
                 </div>
             </div>
         </div>

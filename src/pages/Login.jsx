@@ -52,7 +52,7 @@ const Login = () => {
             <button type="submit" className="bg-green-600 btn border-none text-white rounded-lg hover:bg-green-500 transition duration-300 w-full mt-4">
             Login</button>
             
-            <p className='text-green-500 border-t mt-3 text-center text-sm font-medium'>Or Login With</p>
+            <p className='text-green-500 border-t mt-3 text-center text-sm font-medium'>OR LOGIN WITH</p>
 
             <button type="button" className="bg-blue-600 btn border-none text-white rounded-lg hover:bg-blue-500 transition duration-300 mt-2 flex items-center justify-center gap-2 w-full">
                 <FcGoogle className="text-2xl" />Google
