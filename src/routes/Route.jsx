@@ -5,11 +5,13 @@ import AllCampaign from "../pages/AllCampaign";
 import AddCampaign from "../pages/AddCampaign";
 import MyCampaign from "../pages/MyCampaign";
 import MyDonation from "../pages/MyDonation";
+import ErrorPage from "../pages/ErrorPage";
 
 const Route = createBrowserRouter([
   {
     path: '/',
     element: <MainLayout></MainLayout>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         index: true, // This makes Home the default child route for '/'
