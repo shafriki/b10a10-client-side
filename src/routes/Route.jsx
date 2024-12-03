@@ -6,6 +6,8 @@ import AddCampaign from "../pages/AddCampaign";
 import MyCampaign from "../pages/MyCampaign";
 import MyDonation from "../pages/MyDonation";
 import ErrorPage from "../pages/ErrorPage";
+import Login from "../pages/Login";
+import Register from "../pages/Register";
 
 const Route = createBrowserRouter([
   {
@@ -36,6 +38,14 @@ const Route = createBrowserRouter([
       {
         path: '/donation',
         element: <MyDonation></MyDonation>
+      },
+      {
+        path: '/login',
+        element: <Login></Login>
+      },
+      {
+        path: '/register',
+        element: <Register></Register>
       },
     ],
   },
