@@ -10,7 +10,7 @@ const Banner = () => {
         <div className="w-full">
             <div className="w-full bg-gray-100">
                 <Swiper modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]} spaceBetween={30} slidesPerView={1} navigation pagination={{ clickable: true }} scrollbar={{ draggable: true }}
-                    autoplay={{ delay: 3000, disableOnInteraction: false }}
+                    autoplay={{ delay: 1800, disableOnInteraction: false }}
                     className="h-full">
 
                     <SwiperSlide className="relative h-[400px]">

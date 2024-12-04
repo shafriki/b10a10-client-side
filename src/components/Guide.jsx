@@ -17,7 +17,7 @@ const Guide = () => {
 
         {/* Input Form */}
         <form className="mt-6 flex flex-col sm:flex-row items-center">
-          <input type="email" placeholder="Enter your email" className="w-full sm:w-auto px-4 py-2 mb-4 sm:mb-0 sm:mr-2 rounded-md border-none focus:outline-none focus:ring-2 focus:ring-white placeholder-gray-600"/>
+          <input type="email" id="email" placeholder="Enter your email" className="w-full sm:w-auto px-4 py-2 mb-4 sm:mb-0 sm:mr-2 rounded-md border-none focus:outline-none focus:ring-2 focus:ring-white placeholder-gray-600"/>
           
           <button className="border-none text-xs  md:text-base bg-black text-white px-6 py-2 rounded-md hover:bg-gray-800 focus:ring-2 focus:ring-white">
             SUBSCRIBE</button>
