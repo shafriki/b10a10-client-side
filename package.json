@@ -18,6 +18,7 @@
     "react-router-dom": "^7.0.2",
     "react-simple-typewriter": "^5.0.1",
     "react-toastify": "^10.0.6",
+    "react-tooltip": "^5.28.0",
     "swiper": "^11.1.15"
   },
   "devDependencies": {
