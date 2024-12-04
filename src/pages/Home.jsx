@@ -3,6 +3,7 @@ import Banner from '../components/Banner';
 import Funding from '../components/Funding';
 import Guide from '../components/Guide';
 import Category from '../components/Category';
+import Platform from '../components/Platform';
 
 const Home = () => {
 
@@ -14,6 +15,7 @@ const Home = () => {
         <div>
             <Banner></Banner>
             <Funding></Funding>
+            <Platform></Platform>
             <Category></Category>
             <Guide></Guide>
         </div>
