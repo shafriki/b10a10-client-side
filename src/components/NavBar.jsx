@@ -67,7 +67,7 @@ const NavBar = () => {
               <img
   src={user?.photoURL || '/default-avatar.png'}  
   alt="User"
-  className="w-8 md:w-12 rounded-full border-2 border-[#E74C3C] object-cover"
+  className="w-8 h-8 md:w-12 md:h-12 rounded-full border-2 border-[#E74C3C] object-cover"
   title={user?.displayName || "User"} />
 
               </div>

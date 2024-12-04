@@ -1,6 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const MyDonation = () => {
+
+    useEffect(() => {
+        document.title = "My Donations | CrowdCube";
+      }, []);
+
     return (
         <div>
             my all donations

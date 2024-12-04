@@ -1,6 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const AddCampaign = () => {
+
+    useEffect(() => {
+        document.title = "Add Campaign | CrowdCube";
+      }, []);
+
     return (
         <div>
             add new campaign
