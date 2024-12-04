@@ -17,7 +17,6 @@ const Home = () => {
     return (
         <div>
             <Banner></Banner>
-            <h3>campaign length: {campaign.length} </h3>
             <Funding></Funding>
             <Platform></Platform>
             <Category></Category>
