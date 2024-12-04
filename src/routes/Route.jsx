@@ -9,6 +9,7 @@ import ErrorPage from "../pages/ErrorPage";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import PrivateRoute from "../routes/PrivateRoute";
+import Details from "../pages/Details";
 
 const Route = createBrowserRouter([
   {
@@ -53,6 +54,16 @@ const Route = createBrowserRouter([
             <MyDonation></MyDonation>
           </PrivateRoute>
         ),
+      },
+      {
+        path: '/details/:id',
+        element: (
+          <PrivateRoute>
+            <Details></Details>
+          </PrivateRoute>
+        ),
+        loader: ({ params }) => fetch(`http://localhost:5000/campaign/${params.id}`)
+
       },
       {
         path: '/login',
