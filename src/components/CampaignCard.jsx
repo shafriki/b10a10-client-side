@@ -1,0 +1,43 @@
+import { Link } from "react-router-dom";
+import { MdCampaign } from "react-icons/md";
+import { IoTimer } from "react-icons/io5";
+
+
+
+const CampaignCard = ({ campaign }) => {
+    const { image, title, campaignType, deadline } = campaign;
+  
+    return (
+      <div className="flex flex-col md:flex-row border border-gray-300 rounded-lg shadow-md overflow-hidden mx-4 md:mx-0 gap-5 bg-[#D9F7D0]">
+        {/* Left Side: Image */}
+        <div className="w-full md:w-1/2 h-40 md:h-auto">
+          <img
+            src={image}
+            alt={title}
+            className="w-full h-full object-cover"
+          />
+        </div>
+  
+        {/* Right Side: Content */}
+        <div className="w-full md:w-2/3 p-4">
+          <h3 className="text-lg font-bold text-gray-800 mb-2">{title}</h3>
+          
+          <p className="text-sm text-gray-500 mb-1 flex items-center">
+            <MdCampaign className="mr-1 font-bold text-xl" />
+            <span className="font-semibold">Campaign Type:</span> {campaignType}
+            </p>
+
+          <p className="text-sm text-gray-500 mb-1 flex items-center">
+            <IoTimer className="mr-1 font-bold text-xl" />
+            <span className="font-semibold">
+            Deadline:</span> {deadline}
+            </p>
+
+          <Link className="btn px-10 bg-[#397f62] text-white border-none hover:bg-[#1B3D2F] my-4">Details</Link>
+        </div>
+      </div>
+    );
+  };
+  
+  export default CampaignCard;
+  

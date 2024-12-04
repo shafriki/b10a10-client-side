@@ -23,10 +23,12 @@ const Route = createBrowserRouter([
       {
         path: '/home',
         element: <Home></Home>,
+        loader: () => fetch('http://localhost:5000/campaign'),
       },
       {
         path: '/allcampaign',
         element:<AllCampaign></AllCampaign>,
+        loader: () => fetch('http://localhost:5000/campaign'),
       },
       {
         path: '/addCampaign',
