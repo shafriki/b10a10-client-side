@@ -8,6 +8,7 @@ import MyDonation from "../pages/MyDonation";
 import ErrorPage from "../pages/ErrorPage";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import PrivateRoute from "../routes/PrivateRoute";
 
 const Route = createBrowserRouter([
   {
@@ -16,7 +17,7 @@ const Route = createBrowserRouter([
     errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
-        index: true, // This makes Home the default child route for '/'
+        index: true, 
         element: <Home></Home>,
       },
       {
@@ -25,27 +26,39 @@ const Route = createBrowserRouter([
       },
       {
         path: '/allcampaign',
-        element: <AllCampaign></AllCampaign>,
+        element:<AllCampaign></AllCampaign>,
       },
       {
         path: '/addCampaign',
-        element: <AddCampaign></AddCampaign>,
+        element: (
+          <PrivateRoute>
+            <AddCampaign></AddCampaign>
+          </PrivateRoute>
+        ),
       },
       {
         path: '/myCampaign',
-        element: <MyCampaign></MyCampaign>,
+        element: (
+          <PrivateRoute>
+            <MyCampaign></MyCampaign>
+          </PrivateRoute>
+        ),
       },
       {
         path: '/donation',
-        element: <MyDonation></MyDonation>
+        element: (
+          <PrivateRoute>
+            <MyDonation></MyDonation>
+          </PrivateRoute>
+        ),
       },
       {
         path: '/login',
-        element: <Login></Login>
+        element: <Login></Login>,
       },
       {
         path: '/register',
-        element: <Register></Register>
+        element: <Register></Register>,
       },
     ],
   },
