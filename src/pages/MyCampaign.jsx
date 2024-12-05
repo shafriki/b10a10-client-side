@@ -38,19 +38,34 @@ const MyCampaign = () => {
                 })
                     .then(res => res.json())
                     .then(data => {
-                        if (data.deletedCount > 0) {
+                        if (data.message === 'Campaign deleted successfully.' || data.deletedCount > 0) {
                             Swal.fire({
                                 title: "Deleted!",
                                 text: "Campaign has been deleted.",
                                 icon: "success"
                             });
-                            const remainingCampaigns = campaigns.filter(campaign => campaign._id !== id);
-                            setCampaigns(remainingCampaigns);
+                            // Update the state to reflect the deletion instantly
+                            setCampaigns(campaigns.filter(campaign => campaign._id !== id));
+                        } else {
+                            Swal.fire({
+                                title: "Error!",
+                                text: "Failed to delete campaign.",
+                                icon: "error"
+                            });
                         }
                     })
+                    .catch(err => {
+                        console.error('Error deleting campaign:', err);
+                        Swal.fire({
+                            title: "Error!",
+                            text: "Something went wrong while deleting.",
+                            icon: "error"
+                        });
+                    });
             }
         });
     };
+    
 
     return (
         <div>
