@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
+import Swal from 'sweetalert2'; 
 
 const Details = () => {
     const campaign = useLoaderData();
@@ -9,7 +10,11 @@ const Details = () => {
 
     const handleDonate = async () => {
         if (!user) {
-            alert("Please log in to donate.");
+=            Swal.fire({
+                icon: 'warning',
+                title: 'Please log in to donate.',
+                showConfirmButton: true,
+            });
             return;
         }
 
@@ -31,14 +36,29 @@ const Details = () => {
 
             const result = await response.json();
             if (response.ok) {
-                alert("Thank you for your donation!");
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Thank you for your donation!',
+                    showConfirmButton: false,
+                    timer: 1500,
+                });
             } else {
                 console.error(result);
-                alert("Something went wrong. Please try again.");
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Something went wrong.',
+                    text: 'Please try again.',
+                    showConfirmButton: true,
+                });
             }
         } catch (error) {
             console.error("Donation Error:", error);
-            alert("Unable to process donation.");
+            Swal.fire({
+                icon: 'error',
+                title: 'Unable to process donation.',
+                text: 'Please try again later.',
+                showConfirmButton: true,
+            });
         }
     };
 
