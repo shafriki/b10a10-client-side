@@ -91,16 +91,16 @@ const MyCampaign = () => {
                             {campaigns.map((campaign) => (
                                 <tr key={campaign._id}>
                                     <th>1</th>
-                                    <td>{campaign.name}</td>
+                                    <td>{campaign.title}</td>
                                     <td>{campaign.description}</td>
                                    
                                     <td>
-                                        <Link to={`/campaign/${campaign._id}`}>
+                                        {/* <Link to={`/campaign/${campaign._id}`}>
                                             <button className="btn btn-outline btn-primary">
                                                 <MdOpenInFull />
                                                 View
                                             </button>
-                                        </Link>
+                                        </Link> */}
                                     </td>
                                     <td>
                                         <Link to={`/update/${campaign._id}`}>
