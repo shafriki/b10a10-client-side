@@ -10,7 +10,8 @@ const Details = () => {
 
     const handleDonate = async () => {
         if (!user) {
-=            Swal.fire({
+            // Use SweetAlert2 to show the popup
+            Swal.fire({
                 icon: 'warning',
                 title: 'Please log in to donate.',
                 showConfirmButton: true,
@@ -36,6 +37,7 @@ const Details = () => {
 
             const result = await response.json();
             if (response.ok) {
+                // Success alert using SweetAlert2
                 Swal.fire({
                     icon: 'success',
                     title: 'Thank you for your donation!',
