@@ -21,7 +21,6 @@ const UpdateCampaign = () => {
         const userName = form.userName.value;
 
         const updatedCampaign = { image, title, campaignType, description, minDonation, deadline, userEmail, userName };
-        console.log('Updated Campaign:', updatedCampaign);
 
         // Send updated data to the server
         fetch(`http://localhost:5000/campaign/${_id}`, {
@@ -65,12 +64,12 @@ const UpdateCampaign = () => {
     };
 
     return (
-        <div className="max-w-6xl mx-auto">
-            <h2 className="text-2xl text-center font-bold my-4">Update Campaign: {title}</h2>
+        <div className="max-w-4xl md:mx-auto mx-3">
+            <h2 className="text-2xl md:text-4xl text-center font-bold my-4">Update Campaign: {title}</h2>
 
-            <div className="bg-cyan-100 p-4 rounded-lg">
+            <div className="bg-green-100 p-4 md:px-24 md:py-10 rounded-xl shadow-lg mb-10">
                 <form onSubmit={handleUpdate}>
-                    {/* Form row: Title and Image */}
+
                     <div className="md:flex mb-6">
                         <div className="form-control md:w-1/2">
                             <label className="label">
@@ -89,7 +88,7 @@ const UpdateCampaign = () => {
                         </div>
                     </div>
 
-                    {/* Form row: Campaign Type and Minimum Donation */}
+                    
                     <div className="md:flex mb-6">
                         <div className="form-control md:w-1/2">
                             <label className="label">
@@ -114,7 +113,7 @@ const UpdateCampaign = () => {
                         </div>
                     </div>
 
-                    {/* Form row: Deadline */}
+                    
                     <div className="mb-6">
                         <div className="form-control">
                             <label className="label">
@@ -124,7 +123,7 @@ const UpdateCampaign = () => {
                         </div>
                     </div>
 
-                    {/* Form row: User Name and User Email */}
+                    
                     <div className="md:flex mb-6">
                         <div className="form-control md:w-1/2">
                             <label className="label">
@@ -140,8 +139,7 @@ const UpdateCampaign = () => {
                             <input readOnly type="email" defaultValue={userEmail} name="userEmail" placeholder="User Email" className="input input-bordered w-full" required />
                         </div>
                     </div>
-
-                    {/* Form row: Description */}
+                  
                     <div className="mb-6">
                         <div className="form-control">
                             <label className="label">
@@ -152,12 +150,8 @@ const UpdateCampaign = () => {
                         </div>
                     </div>
 
-                    {/* Submit Button */}
-                    <input
-                        className="btn btn-block bg-cyan-600 text-white"
-                        type="submit"
-                        value="Update Campaign"
-                    />
+                    <input className="btn btn-block bg-green-600 hover:bg-green-700 text-white"
+                    type="submit" value="Update Campaign"/>
                 </form>
             </div>
         </div>

@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../providers/AuthProvider';
 import Swal from 'sweetalert2';
 
 const AddCampaign = () => {
+    const { user } = useContext(AuthContext); 
+
     const handleAddCampaign = e => {
         e.preventDefault();
 
@@ -43,14 +46,14 @@ const AddCampaign = () => {
     return (
         <div className='lg:w-3/4 mx-auto'>
             <div className="text-center p-10">
-                <h1 className="text-5xl font-bold">Add New Campaign!</h1>
-                <p className="py-6">
-                    Create a new campaign by providing the details below.
+                <h1 className="text-2xl md:text-4xl font-bold">Add New Campaign</h1>
+                <p className="my-2 text-sm md:text-lg text-gray-500">
+                    Create a new campaign by providing the details below
                 </p>
             </div>
-            <div className="card bg-base-100 w-full shrink-0 shadow-2xl">
-                <form onSubmit={handleAddCampaign} className="card-body">
-                    {/* form first row */}
+            <div className="card bg-green-100 w-full shrink-0 shadow-2xl mb-10">
+                <form onSubmit={handleAddCampaign} className="card-body md:px-24 md:py-14">
+
                     <div className='flex flex-col lg:flex-row gap-5'>
                         <div className="form-control flex-1">
                             <label className="label">
@@ -70,7 +73,7 @@ const AddCampaign = () => {
                             </select>
                         </div>
                     </div>
-                    {/* form second row */}
+
                     <div className='flex flex-col lg:flex-row gap-5'>
                         <div className="form-control flex-1">
                             <label className="label">
@@ -85,7 +88,7 @@ const AddCampaign = () => {
                             <input type="number" name='minDonation' placeholder="Minimum Donation Amount" className="input input-bordered" required />
                         </div>
                     </div>
-                    {/* form third row */}
+
                     <div className='flex flex-col lg:flex-row gap-5'>
                         <div className="form-control flex-1">
                             <label className="label">
@@ -97,16 +100,18 @@ const AddCampaign = () => {
                             <label className="label">
                                 <span className="label-text">User Email</span>
                             </label>
-                            <input type="email" name='userEmail' placeholder="User Email" className="input input-bordered" required />
+                            <input type="email" name='userEmail' placeholder="User Email" className="input input-bordered" required readOnly value={user?.email || ''} />
                         </div>
                     </div>
-                    {/* form fourth row */}
+
+
                     <div className='flex flex-col lg:flex-row gap-5'>
                         <div className="form-control flex-1">
                             <label className="label">
                                 <span className="label-text">User Name</span>
                             </label>
-                            <input type="text" name='userName' placeholder="User Name" className="input input-bordered" required />
+                            <input type="text" name='userName' placeholder="User Name" className="input input-bordered" required 
+                            readOnly value={user?.displayName || ''} />
                         </div>
                         <div className="form-control flex-1">
                             <label className="label">
@@ -117,7 +122,7 @@ const AddCampaign = () => {
                     </div>
 
                     <div className="form-control mt-6">
-                        <button className="btn btn-primary">Add Campaign</button>
+                        <button className="btn bg-rose-500 text-white hover:bg-rose-700">Add Campaign</button>
                     </div>
                 </form>
             </div>
