@@ -1,8 +1,9 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../providers/AuthProvider';
-import { Link, useLoaderData } from 'react-router-dom';
-import { MdOpenInFull, MdEdit } from "react-icons/md";
+import { Link } from 'react-router-dom';
 import Swal from "sweetalert2";
+import { FaPenAlt } from "react-icons/fa";
+import { RiDeleteBin2Fill } from "react-icons/ri";
 
 const MyCampaign = () => {
     useEffect(() => {
@@ -65,54 +66,45 @@ const MyCampaign = () => {
             }
         });
     };
-    
 
     return (
-        <div>
-            <h2 className="text-3xl text-center mt-8 font-bold">My Campaign List</h2>
+        <div className='mb-10'>
+            <h2 className="text-2xl md:text-4xl text-center mt-8 font-bold">My Campaign List</h2>
             <div className="overflow-x-auto px-5">
                 {campaigns.length === 0 ? (
                     <p className="text-center mt-4">No campaigns added yet.</p>
                 ) : (
-                    <table className="table bg-cyan-50 mt-5">
+                    <table className="table bg-green-50 mt-5">
                         <thead>
-                            <tr className="font-bold text-black text-lg">
-                                <th></th>
-                                <th>Campaign Name</th>
-                                <th>Description</th>
-                                <th>Goal</th>
-                                <th>Raised</th>
-                                <th></th>
-                                <th></th>
-                                <th></th>
+                            <tr className="font-bold text-black text-xs md:text-lg">
+                                <th>Index No.</th>
+                                <th>Campaign Title</th>
+                                <th>Deadline</th>
+                                <th>Campaign Type</th>
+                                <th>Minimum Donation</th>
+                                <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
-                            {campaigns.map((campaign) => (
-                                <tr key={campaign._id}>
-                                    <th>1</th>
+                            {campaigns.map((campaign, index) => (
+                                <tr key={campaign._id} className='text-xs md:text-base'>
+                                    <th>{index + 1}</th> {/* Dynamically incrementing index */}
                                     <td>{campaign.title}</td>
-                                    <td>{campaign.description}</td>
-                                   
-                                    <td>
-                                        {/* <Link to={`/campaign/${campaign._id}`}>
-                                            <button className="btn btn-outline btn-primary">
-                                                <MdOpenInFull />
-                                                View
-                                            </button>
-                                        </Link> */}
-                                    </td>
+                                    <td>{campaign.deadline}</td>
+                                    <td>{campaign.campaignType}</td>
+                                    <td>{campaign.minDonation}</td>
                                     <td>
                                         <Link to={`/update/${campaign._id}`}>
-                                            <button className="btn btn-info">
-                                                <MdEdit />
+                                            <button className="btn text-xs md:text-base bg-green-500 text-white">
+                                                <FaPenAlt />
                                                 Update
                                             </button>
                                         </Link>
                                     </td>
                                     <td>
-                                        <button onClick={() => handleDelete(campaign._id)} className="btn btn-error">
-                                            X Delete
+                                        <button onClick={() => handleDelete(campaign._id)} className="btn btn-error text-xs md:text-base text-white">
+                                            <RiDeleteBin2Fill />
+                                            Delete
                                         </button>
                                     </td>
                                 </tr>
