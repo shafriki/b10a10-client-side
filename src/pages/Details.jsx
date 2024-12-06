@@ -3,6 +3,11 @@ import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
 import Swal from 'sweetalert2'; 
 import { toast, ToastContainer } from 'react-toastify'; 
+import { FaCalendarTimes } from "react-icons/fa";
+import { MdCampaign } from "react-icons/md";
+import { FaDonate } from "react-icons/fa";
+
+
 
 const Details = () => {
     const campaign = useLoaderData();
@@ -72,7 +77,7 @@ const Details = () => {
     };
 
     return (
-        <div className="max-w-4xl md:mx-auto my-10 bg-white shadow-xl rounded-2xl overflow-hidden border border-gray-200 mx-4">
+        <div className="max-w-4xl md:mx-auto my-10 bg-green-50 shadow-xl rounded-2xl overflow-hidden border border-gray-200 mx-4">
             <div className="flex flex-col md:flex-row">
                 <div className="flex-shrink-0 w-full md:w-96 h-96 md:h-auto relative">
                     <img src={image} alt={title} className="absolute top-0 left-0 w-full h-full object-cover rounded-t-xl md:rounded-l-xl md:rounded-t-none transition-transform transform hover:scale-105" />
@@ -85,20 +90,23 @@ const Details = () => {
 
                     <p className="text-gray-700 text-sm text-justify md:text-lg">{description}</p>
 
-                    <p className="text-sm md:text-lg text-gray-600">
-                        <strong>Deadline:</strong> {deadline}
+                    <p className="text-sm md:text-lg text-gray-600 flex items-center gap-1">
+                        <FaCalendarTimes className='text-rose-500'/>Deadline: {deadline}
                     </p>
 
-                    <p className="text-sm md:text-lg text-gray-600">
-                        <strong>Campaign Type:</strong> {campaignType}
+                    <p className="text-sm flex items-center gap-1 md:text-lg text-gray-600">
+                    <MdCampaign className='text-rose-500'/>
+
+                        Campaign Type: {campaignType}
                     </p>
 
-                    <p className="text-sm md:text-lg text-gray-600">
-                        <strong>Minimum Donation:</strong> {minDonation}
+                    <p className="text-sm md:text-lg flex gap-1 items-center text-gray-600 border-b-2 border-gray-300">
+                    <FaDonate className='text-rose-500'/>
+                    Minimum Donation:{minDonation}
                     </p>
 
                     <div className="mt-6">
-                        <button onClick={handleDonate} className="w-full btn bg-green-600 text-white hover:bg-green-700" >
+                        <button onClick={handleDonate} className="w-full btn bg-green-600 border-none text-white hover:bg-green-700" >
                         Donate Now</button>
                     </div>
                 </div>
