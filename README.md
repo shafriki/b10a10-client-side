@@ -1,4 +1,4 @@
-# Project Name: CrowdCube [Live Link]()
+# Project Name: CrowdCube [Live Link](https://shafriki-crowdcube.surge.sh)
 
 ## Short Description
 **CrowdCube** is a crowdfunding platform that allows individuals to raise funds for personal, creative, or entrepreneurial projects. Whether it’s for medical expenses, launching a new startup, or funding creative ideas, CrowdCube connects users with potential supporters. Built using React, Firebase, Tailwind, MongoDB, and Node Express, it offers a seamless, secure platform for raising money and building communities.
@@ -53,4 +53,4 @@ During the development of **CrowdCube**, I faced multiple challenges, including 
 
 
 ## Live Link
-[Click here to view live project]()
+[Click here to view live project](https://shafriki-crowdcube.surge.sh)
