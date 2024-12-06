@@ -15,8 +15,8 @@ const ErrorPage = () => {
                     className="max-w-full h-auto md:max-w-[480px] md:h-[280px]">
                 </iframe>
                 
-                <Link to='/'>
-                    <button className='btn mt-5 px-8 py-2 bg-[#1B3D2F] border-none text-white text-sm md:text-lg hover:bg-[#429271] '>Back To Home Page
+                <Link to='/allcampaign'>
+                    <button className='btn mt-5 px-8 py-2 bg-[#1B3D2F] border-none text-white text-sm md:text-lg hover:bg-[#429271] '>Back To CrowdCube
                     </button>
                 </Link>
             </div>
