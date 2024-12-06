@@ -21,7 +21,7 @@ const AddCampaign = () => {
         console.log(newCampaign);
 
         // send data to the server and database
-        fetch('http://localhost:5000/campaign', {
+        fetch('https://crowd-cube-server-one.vercel.app/campaign', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

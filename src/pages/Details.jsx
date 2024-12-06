@@ -40,7 +40,7 @@ const Details = () => {
         };
 
         try {
-            const response = await fetch('http://localhost:5000/donated', {
+            const response = await fetch('https://crowd-cube-server-one.vercel.app/donated', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

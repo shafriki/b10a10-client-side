@@ -13,7 +13,7 @@ const MyDonation = () => {
             try {
                 if (!user?.email) return;
 
-                const response = await fetch(`http://localhost:5000/donations?email=${user.email}`);
+                const response = await fetch(`https://crowd-cube-server-one.vercel.app/donations?email=${user.email}`);
                 const data = await response.json();
 
                 if (response.ok) {

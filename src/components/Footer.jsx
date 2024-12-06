@@ -25,21 +25,13 @@ const Footer = () => {
                     <a className="link link-hover">My Campaign</a>
                     <a className="link link-hover">My Donations</a>
                 </nav>
-                <form>
-                    <h6 className="footer-title">Newsletter</h6>
-                    <fieldset className="form-control w-80">
-                    <label className="label">
-                        <span className="label-text text-white">Enter your email address</span>
-                    </label>
-                    <div className="join">
-                        <input
-                        type="text"
-                        placeholder="username@site.com"
-                        className="input input-bordered join-item text-black" />
-                        <button className="btn bg-red-500 border-none join-item">Subscribe</button>
-                    </div>
-                    </fieldset>
-                </form>
+                <nav>
+                    <h6 className="footer-title">Legal</h6>
+                    <a className="link link-hover">Terms of use</a>
+                    <a className="link link-hover">Privacy policy</a>
+                    <a className="link link-hover">Cookie policy</a>
+                </nav>
+                
                 </footer>
                 <footer className="footer bg-[#0F241F] text-[#ECF0F1] border-base-300 border-t px-10 py-4">
                 <aside className="grid-flow-col items-center">

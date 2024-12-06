@@ -67,7 +67,7 @@ const Register = () => {
 
       // Send user data to the backend
       const newUser = { name, email, photo };
-      await fetch("http://localhost:5000/users", {
+      await fetch("https://crowd-cube-server-one.vercel.app/users", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
