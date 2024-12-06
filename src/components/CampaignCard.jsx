@@ -3,7 +3,8 @@ import { MdCampaign } from "react-icons/md";
 import { IoTimer } from "react-icons/io5";
 
 const CampaignCard = ({ campaign }) => {
-  const { _id, image, title, campaignType, deadline } = campaign;
+  const { _id, image, title, campaignType, deadline, 
+    minDonation } = campaign;
 
   return (
     <div className="flex flex-col md:flex-row border border-gray-300 rounded-lg shadow-md overflow-hidden mx-4 md:mx-0 gap-5 bg-[#D9F7D0]">
@@ -24,6 +25,11 @@ const CampaignCard = ({ campaign }) => {
         <p className="text-sm text-gray-500 mb-1 flex items-center">
           <IoTimer className="mr-1 font-bold text-xl" />
           <span className="font-semibold">Deadline:</span> {deadline}
+        </p>
+
+        <p className="text-sm text-gray-500 mb-1 flex items-center">
+          <IoTimer className="mr-1 font-bold text-xl" />
+          <span className="font-semibold">Minimum Donation:</span> {minDonation}
         </p>
 
         <Link to={`/details/${_id}`} className="btn px-10 bg-[#397f62] text-white border-none hover:bg-[#1B3D2F] my-4">

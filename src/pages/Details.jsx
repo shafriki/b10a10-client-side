@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../providers/AuthProvider';
 import Swal from 'sweetalert2'; 
+import { toast, ToastContainer } from 'react-toastify'; 
 
 const Details = () => {
     const campaign = useLoaderData();
@@ -9,8 +10,15 @@ const Details = () => {
     const { user } = useContext(AuthContext);
 
     const handleDonate = async () => {
+        const currentDate = new Date();
+        const campaignDeadline = new Date(deadline);
+
+        if (currentDate > campaignDeadline) {
+            toast.error("Sorry, this campaign has ended.");
+            return;
+        }
+
         if (!user) {
-            // Use SweetAlert2 to show the popup
             Swal.fire({
                 icon: 'warning',
                 title: 'Please log in to donate.',
@@ -37,7 +45,6 @@ const Details = () => {
 
             const result = await response.json();
             if (response.ok) {
-                // Success alert using SweetAlert2
                 Swal.fire({
                     icon: 'success',
                     title: 'Thank you for your donation!',
@@ -96,6 +103,8 @@ const Details = () => {
                     </div>
                 </div>
             </div>
+
+            <ToastContainer position="top-center" />
         </div>
     );
 };

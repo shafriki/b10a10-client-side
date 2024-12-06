@@ -10,7 +10,7 @@ import RunningCampaign from '../components/RunningCampaign';
 const Home = () => {
 
     const campaign = useLoaderData();
-    console.log(campaign)
+    // console.log(campaign)
 
     useEffect(() => {
         document.title = "Home | CrowdCube";
