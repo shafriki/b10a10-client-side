@@ -9,7 +9,7 @@ const RunningCampaign = () => {
         ? campaigns.filter(campaign => new Date(campaign.deadline) > currentDate)
         : [];
 
-    console.log(runningCampaigns); 
+    // console.log(runningCampaigns); 
 
     return (
         <div className="container mx-auto p-4 max-w-screen-xl mb-14">
