@@ -12,6 +12,7 @@ import PrivateRoute from "../routes/PrivateRoute";
 import Details from "../pages/Details";
 import UpdateCampaign from "../pages/UpdateCampaign";
 import RunningCampaign from "../components/RunningCampaign";
+import AboutUs from "../components/AboutUs";
 
 const Route = createBrowserRouter([
   {
@@ -45,6 +46,10 @@ const Route = createBrowserRouter([
             <AddCampaign></AddCampaign>
           </PrivateRoute>
         ),
+      },
+      {
+        path:'/about',
+        element:<AboutUs></AboutUs>,
       },
       {
         path: '/myCampaign/:email',
