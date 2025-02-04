@@ -49,8 +49,17 @@ During the development of **CrowdCube**, I faced multiple challenges, including 
 7. **My Donations:** Users can track their donation history, viewing campaigns they have contributed to and their donation amounts.
 
 
+## Installation
+- Ensure you have Node.js, npm or yarn, and Git installed.
+- Clone the repository: git clone https://github.com/shafriki/b10a10-client-side.git
+- cd b10a10-client-side file
+- Install dependencies: npm install
+- Set up frontend environment variables (Firebase config): Create a .env file 
+- Run the frontend: npm run dev
 
 
+### Video Walkthrough
+[![Watch the video](https://img.youtube.com/vi/ES_COlJivzg/0.jpg)](https://www.youtube.com/watch?v=ES_COlJivzg)
 
 ## Live Link
 [Click here to view live project](https://shafriki-crowdcube.surge.sh)
